@@ -1,0 +1,9 @@
+---
+description: CLAD layout and link policy for the public Overlane marketing React site
+globs: src/**/*
+---
+
+- **Stack:** Atom → Molecule → Organism → View → App (`public-github/AGENTS.md`).
+- **Outbound URLs:** Use `BUY_NOW_URL` only. Sticky buy card must be `<a href>`. No links to private repos, blob paths, or engineering docs.
+- **Guides:** Copy in `molecules/guides/guide-content.ts`; anchors `#site-*` only.
+- **Tests:** Colocated Vitest for every molecule/atom you change.

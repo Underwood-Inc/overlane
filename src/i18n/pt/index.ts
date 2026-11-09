@@ -1,0 +1,529 @@
+import type { Translation } from '../i18n-types.js';
+
+const translation = {
+	"brand": {
+		"name": "Overlane",
+		"tagline": "Telemetria · sobreposições · observações de arquivo"
+	},
+	"common": {
+		"close": "Fechar",
+		"loading": "Carregando..",
+		"save": "Gravar",
+		"cancel": "Cancelar",
+		"overlaneJson": "overlane.json"
+	},
+	"nav": {
+		"home": "Principal",
+		"overlays": "Sobreposições",
+		"overlaysSub": "URLs do painel",
+		"dashboard": "Painel",
+		"dashboardSub": "Arranque de arquivos",
+		"archive": "Arquivo",
+		"archiveSub": "Instantâneos",
+		"journal": "Registo de sessão",
+		"journalSub": "Ficheiros de registo",
+		"deliveries": "Registo de entrega",
+		"deliveriesSub": "Trabalhos completados",
+		"overlayBuilder": "Construtor de sobreposição",
+		"overlayBuilderSub": "Compor as disposições",
+		"mockLab": "Laboratório de Mock",
+		"mockLabSub": "Telemetria de mock",
+		"reference": "Referência",
+		"referenceSub": "Ícones & métricas",
+		"settings": "Configurações",
+		"support": "Suporte",
+		"supportSub": "Comunidade de discórdia",
+		"toolsAria": "Referência, configurações e suporte"
+	},
+	"views": {
+		"home": "Principal",
+		"overlays": "Sobreposições",
+		"dashboard": "Painel",
+		"archive": "Arquivo",
+		"journal": "Registo de sessão",
+		"deliveries": "Registo de entrega",
+		"settings": "Configurações",
+		"reference": "Referência"
+	},
+	"titlebar": {
+		"brandAria": "Ir para casa",
+		"collapseNav": "Recolher a navegação",
+		"collapseNavSr": "Recolher a navegação",
+		"resizeNav": "Redimensionar a navegação",
+		"minimize": "Minimizar",
+		"maximize": "Maximizar",
+		"restore": "Restaurar",
+		"close": "Fechar"
+	},
+	"commandPalette": {
+		"goToView": "Ir para a visualização",
+		"referenceHint": "Glossários & métricos de ícones",
+		"overlayBuilder": "Construtor de sobreposição",
+		"overlayBuilderHint": "Compor as disposições (/construtor)",
+		"vaultImportExport": "Importar / exportar o cofre",
+		"vaultHint": "Configurações → Dados",
+		"searchMetrics": "Glossário de métricas de pesquisa",
+		"searchMetricsHint": "Referência → métricas",
+		"searchIcons": "Glossário de ícones de pesquisa",
+		"searchIconsHint": "Ícones de referência →"
+	},
+	"settings": {
+		"sectionsAria": "Seções de configurações",
+		"leadBeforeConfig": "Tudo aqui é salvo para o seu",
+		"leadAfterConfig": ". Pré-visualização do tema da aplicação ao escolher uma predefinição — use",
+		"leadAfterSaveTheme": "para ficar com ele. Servidor, telemetria, pastas e ajuste de colisão precisam de um reinício de Overlane (app desktop ou sidecar).",
+		"saveAppTheme": "Gravar o tema da aplicação",
+		"tabs": {
+			"look": "Olha",
+			"language": "Língua",
+			"connection": "Ligação",
+			"storage": "Armazenamento",
+			"data": "Dados",
+			"careers": "Carreiras",
+			"alerts": "Alertas e anunciar"
+		},
+		"languageHeading": "Língua",
+		"languageBody": "Escolha o idioma para rótulos, configurações e diálogos de console. As páginas de marketing usam a mesma escolha quando abertas no aplicativo.",
+		"languageLabel": "Mostrar idioma",
+		"languageAria": "Mostrar idioma"
+	},
+	"help": {
+		"title": "Ajuda na consola",
+		"commandPalette": "Ctrl+K — paleta de comandos (ver, copiar URLs predefinidas).",
+		"lookScale": "Configurações → Olhar — escala de janela para todo o console (separar da escala de interface de sobreposição).",
+		"archiveChips": "Chips de arquivo — clique duas vezes para fixar um token de pesquisa.",
+		"importPreview": "Importar — escolha um pacote para visualizar arquivos antes de importar."
+	},
+	"careers": {
+		"legend": "Perfis profissionais de condução",
+		"hint": "Organize o arquivo, painel e conteúdo futuro sob uma carreira chamada ligada ao ETS2 ou ATS. Retrato padrão para um avatar gerado a partir do seu nome de perfil — randomize ou upload PNG/WebP/JPEG (max 512×512, 384 KiB).",
+		"profileUpdated": "Perfil actualizado.",
+		"profileCreated": "Perfil criado.",
+		"saveFailed": "O salvamento falhou."
+	},
+	"onboarding": {
+		"steps": {
+			"setup": "& Plug- in de jogo",
+			"verify": "Verificar",
+			"done": "Pronto"
+		}
+	},
+	"marketing": {
+		"heroTitle": "Overlane",
+		"heroTaglineLead": "Uma pilha local",
+		"heroTaglineRest": "no seu PC: console de telemetria, arquivo de unidade pesquisável, diário de sessão, e",
+		"heroTaglineEm": "OBS-pronto",
+		"heroTaglineEnd": "painéis de sobreposição para Euro Truck Simulator 2 e American Truck Simulator.",
+		"badgeLocalFirst": "Início local",
+		"badgeWindows": "Área de trabalho Windows + navegador",
+		"badgeNoCloud": "Nenhuma conta na nuvem",
+		"badgeStreamer": "Preparado para o Streamer",
+		"playerGuide": "Guia do jogador",
+		"gettingStarted": "Começar",
+		"exploreFeatures": "Explore as funcionalidades ↓",
+		"proprietaryFine": "Software proprietário · não aberto",
+		"statLive": "Vivo",
+		"statArchive": "Arquivo",
+		"statArchiveDetail": "Linha do tempo, pesquisa, inspetor, comparação",
+		"statJournal": "Registo de sessão",
+		"statVault": "Cofre",
+		"statVaultDetail": "Exportar configurações, dados, registros",
+		"tabs": {
+			"features": "Características",
+			"architecture": "Arquitetura",
+			"data": "Plano de dados",
+			"live": "Sobreposições ao vivo",
+			"desktop": "Área de trabalho",
+			"trust": "Confiar em & TI",
+			"docs": "& Download de guias"
+		},
+		"footerCopyright": "Copyright © Strixun. Overlane é um software proprietário.",
+		"footerGlossary": "Os termos do glossário marcados mostram uma breve explicação sobre o hover ou foco.",
+		"mocks": {
+			"tailFollow": "Seguir cauda",
+			"logFiles": "Ficheiros de registo",
+			"logHint": "Download do arquivo · sort · virtualized scroll in app",
+			"recording": "Gravação",
+			"ldpIngest": "LDP ingerir",
+			"archiveTimeline": "Arquivar timeline · instantâneos",
+			"speed": "Velocidade",
+			"fuel": "Combustível",
+			"lanPort": "LAN · porto 8080",
+			"telemetryLive": "Telemetria ao vivo",
+			"archiveRecording": "Gravação do arquivo",
+			"journalIdle": "Diário ocioso",
+			"liveDriving": "Condução ao vivo",
+			"liveFromGame": "Ao vivo do jogo",
+			"gear": "Artes",
+			"odometer": "Odómetro",
+			"wizardTitle": "Vincular o seu jogo",
+			"wizardStepDetect": "Detecta a instalação do ETS2 / ATS",
+			"wizardStepPlugin": "Activar o plug- in de telemetria SDK",
+			"wizardStepTest": "Testar os campos de & trabalho de velocidade ao vivo",
+			"wizardWaiting": "À espera da primeira telemetria..",
+			"serverRunning": "Servidor em execução",
+			"gameLinked": "Jogo ligado",
+			"httpServer": "Servidor HTTP",
+			"bindAddress": "Endereço de ligação",
+			"port": "Porto",
+			"overlayBaseUrl": "Sobrepor o URL base",
+			"gameLink": "Ligação do jogo",
+			"gameLinkStatusBeforePing": "ETS2 · Plug-in SDK ativo · último ping",
+			"browserSources": "Fontes do navegador"
+		},
+		"dataScale": {
+			"title": "Escala e armazenamento (honestidade)",
+			"lead": "A gravação é esparsa por design — nem todo tique de jogo se torna uma linha — mas as amostras SDK do gzip se somam quando você dirige por meses. Dobrar no Arquivo só colapsa o que você vê na linha do tempo; ele não apaga o histórico no disco.",
+			"ingestStrong": "Ingerir amostragem",
+			"ingestBody": "padrão cerca de um segundo entre linhas elegíveis, mais escreve quando a velocidade ou contexto de trabalho muda, em colisões, ou em limites de trabalho.",
+			"foldStrong": "Dobrar similar",
+			"foldBody": "colapso instantâneos adjacentes no mesmo minuto (ou segunda/hora) quando rota, carga, caminhão, reboque, velocidade e correspondência no trabalho; multas e entregas sempre permanecem visíveis.",
+			"sizeStrong": "Tamanho do estádio",
+			"sizeBody": "na ordem de meio megabyte por mil observações armazenadas para dados de lista; com amostras completas do inspetor, muitas vezes alguns kilobytes por linha — espere um único dígito para dezenas baixas de gigabytes para carreiras multi-milionárias a menos que você ajuste a amostragem.",
+			"hotStrong": "Nível quente",
+			"hotBody": "fatos recentes permanecem em SQLite; observações antigas podem se mover para arquivos de colunas frias e um índice de busca para que o console permaneça responsivo.",
+			"quotaStrong": "Sem quota de nuvem",
+			"quotaBody": "o aplicativo não impõe uma tampa de disco; use Configurações manutenção, exportação de cofre, e simular purga quando uma pasta cresce além do que seu disco confortavelmente detém."
+		},
+		"catalog": {
+			"archiveFoldSimilar": "Dobre similar — colapse instantâneos correspondentes em uma janela de tempo; multas e entregas nunca dobram",
+			"ldpArchitectureLayer": "Registros quentes, arquivos de colunas frias e índice de busca em uma máquina — os baldes esparsos de ingestão e enrolamento mantêm os painéis rapidamente à medida que a contagem de observações sobe para milhões."
+		},
+		"showcase": {
+			"heading": "A consola que executa ao lado do jogo",
+			"lead": "Uma superfície de operador no aplicativo e navegador de desktop: saud strip, arquivo, sobreposições e configurações — as amostras giram abaixo para que você possa ver cada área sem caçar através de abas.",
+			"galleryLabel": "Visitar o produto",
+			"note": "Amostras ilustrativas — não uma sessão ao vivo. Instale Overlane para sua própria telemetria.",
+			"carouselPrevAria": "Amostra anterior",
+			"carouselNextAria": "Amostra seguinte",
+			"carouselTablistAria": "Amostras de produtos",
+			"slideHomeTitle": "Home · Condução ao vivo",
+			"slideHomeBlurb": "Velocidade, combustível, engrenagem, odômetro e contrato ativo — o mesmo cartão que você obtém da telemetria real.",
+			"slideArchiveTitle": "Arquivar a linha do tempo",
+			"slideArchiveBlurb": "Esfregue instantâneos no disco e compare faixas sem repetir toda a sessão.",
+			"slideJournalBlurbBefore": "Navegar",
+			"slideJournalBlurbBetween": "/",
+			"slideJournalBlurbAfter": "arquivos, linhas de cauda com o modo de seguimento e download — registro de aplicativos, não notas pegajosas.",
+			"slideOverlaysTitle": "Sobreposição de predefinições",
+			"slideOverlaysBlurb": "Copie URLs de código do navegador para Velocidade, Controles, Contrato e o resto do catálogo canônico.",
+			"slideStreamTitle": "Sobreposições de fluxo",
+			"slideStreamBlurb": "Estilo de vidro de telemetria — foco de velocidade, mínimo, ou rota-primeiro em uma alimentação.",
+			"slideSettingsTitle": "Configurações · Conexão",
+			"slideSettingsBlurb": "Endereço de ligação, porta e URL base sobreposta em sua máquina.",
+			"slideGameLinkTitle": "Assistente de ligação de jogo",
+			"slideGameLinkBlurb": "Escolha sua pasta sim e confirme o plugin oficial de telemetria antes de rolar.",
+			"pillarLive": "Vivo",
+			"pillarData": "Dados",
+			"pillarFeatures": "Características",
+			"pillarDesktop": "Área de trabalho",
+			"pillarSetup": "Configurar"
+		},
+		"guidesPanel": {
+			"onPageTitle": "Nesta página",
+			"onPageLead": "Tudo aqui é auto-suficiente. Fonte de engenharia e documentos internos não são publicados no GitHub.",
+			"linkDownloads": "Instaladores de janelas",
+			"linkGettingStarted": "Começar",
+			"linkPlayerGuide": "Guia do jogador",
+			"linkLicense": "Aviso de propriedade",
+			"getOverlaneTitle": "Obter Overlane"
+		},
+		"flowNodes": {
+			"gamePlugin": "Plug- in de jogo",
+			"sidecar": "Sidecar",
+			"consoleOverlays": "Consola / sobreposições",
+			"obsBrowser": "Navegador OBS",
+			"localService": "Serviço local",
+			"console": "Consola",
+			"you": "Você",
+			"overlayPanels": "Painéis de sobreposição",
+			"obsSlashBrowser": "OBS / navegador",
+			"ingest": "Ingerir",
+			"hotLedger": "Livro de registos quente",
+			"coldFiles": "Ficheiros frios"
+		},
+		"panels": {
+			"features": {
+				"title": "Construído para o longo prazo",
+				"lead": "Overlane lê o jogo, serve um console de operador rico, alimenta seu fluxo e grava cada milha que você optar por painéis e replay de arquivos — tudo em seu PC.",
+				"calloutStrong": "Os seus dados permanecem locais.",
+				"calloutRest": "Nenhuma conta na nuvem é necessária.",
+				"flowCaption": "Jogo → serviço local → você e seu fluxo",
+				"flowAria": "Fluxo de produto de ponta a ponta",
+				"flowStreamLabel": "Caminho do fluxo",
+				"flowStreamRest": "— mesmo serviço, superfície diferente"
+			},
+			"architecture": {
+				"title": "Produto local composível",
+				"lead": "IU, alimentação ao vivo, gravação e sobreposições compartilham fronteiras explícitas para que as características evoluam sem um monolito.",
+				"cladLead": "Estrutura da casa segue",
+				"cladTail": "— pequenas unidades ligadas através de interfaces claras (portos/adaptadores, política de sobreposição orientada para catálogos).",
+				"flowCaption": "Os pedidos permanecem em loopback por omissão",
+				"flowAria": "Fluxo de solicitação de arquitetura",
+				"flowOptionalRow": "Opcional - LAN vincular em Configurações"
+			},
+			"data": {
+				"title": "Plano de dados local",
+				"lead": "Observações recentes permanecem em um livro de registros rápido; fatos antigos se movem para arquivos de colunas compactas; a pesquisa tem seu próprio índice — nenhum armazém hospedado.",
+				"calloutStrong": "Desenho de arquivo grande",
+				"calloutRest": "— nivelamento quente/frio numa máquina.",
+				"timelineStrong": "Arquivar a linha do tempo",
+				"timelineBody": "— dobras de snapshot e inspector para replay de nível de transporte.",
+				"analyticsStrong": "Índice de análise",
+				"analyticsBody": "— acompanha os gráficos do painel e as fichas de entrega quando a ingestão é iniciada.",
+				"vaultStrong": "Exportação do cofre",
+				"vaultBody": "— configurações, caminhos de dados e registros para pacotes de backup ou suporte.",
+				"journalStrong": "Ficheiros de registo de sessões",
+				"journalBody": "— logs simples no disco; não é a mesma loja que os instantâneos dos arquivos.",
+				"flowCaption": "Escrever e ler caminhos",
+				"flowAria": "Camada de dados"
+			},
+			"live": {
+				"title": "Telemetria e sobreposições vivas",
+				"leadBefore": "Subscrever painéis",
+				"leadAfter": "do mesmo serviço local que alimenta o console — captura de MMF do jogo, fan-out para fontes do navegador.",
+				"presetsStrong": "Painéis predefinidos",
+				"presetsBody": "— vias canónicas como a velocidade, o combustível, o contrato, as métricas por painel e a ordem.",
+				"globalStrong": "Visão global da sobreposição",
+				"globalBody": "— vidro, tipografia e estilo partilhado guardado na configuração.",
+				"composeStrong": "Compor as disposições",
+				"composeBodyBefore": "—",
+				"composeBodyAfter": "do espaço de trabalho do construtor.",
+				"soloStrong": "Métricas individuais",
+				"soloBodyBefore": "—",
+				"soloBodyAfter": "para layouts mínimos de fluxo.",
+				"announceStrong": "Anunciar",
+				"announceBody": "— completação de tarefas em tiras configuráveis a partir de Definições e Sobreposições."
+			},
+			"desktop": {
+				"title": "Área de trabalho das janelas",
+				"leadBefore": "",
+				"leadBetween": "pacotes de serviço local, biblioteca de análise e telemetria oficial DLL para",
+				"leadAfter": "instaladores.",
+				"colInstaller": "Instalar",
+				"colAudience": "Audiência",
+				"colBehaviour": "Comportamento",
+				"rowProdName": "Overlane",
+				"rowProdAudience": "Jogadores & streamers",
+				"rowProdBehaviour": "Telemetria ao vivo, arquivo completo, assistente de link de jogo",
+				"rowDemoName": "Demonstração de Overlane",
+				"rowDemoAudience": "Ensaios",
+				"rowDemoBehaviour": "Amostra de telemetria e arquivo sem o jogo"
+			},
+			"trust": {
+				"title": "Confiar na & privacidade",
+				"lead": "Produto local de usuário único — seus dados de transporte não são um serviço multilocatário hospedado.",
+				"calloutStrong": "Ligação por omissão:",
+				"calloutBefore": " ",
+				"calloutAfter": ". LAN exposição é opt-in em Configurações.",
+				"footer": "Software proprietário. Os instaladores enviados incluem componentes de terceiros sob suas próprias licenças."
+			}
+		},
+		"architectureLayers": {
+			"desktopTitle": "Consola da área de trabalho",
+			"desktopText": "Tauri janela com barra de título personalizada, abre a vista web do console no localhost, gerencia o ciclo de vida sidecar.",
+			"serviceTitle": "Serviço local",
+			"serviceText": "Ir servidor HTTP: telemetria ingerir, arquivo API, rotas de sobreposição, pacotes de console estático, SSE live feed.",
+			"consoleTitle": "Consola UI",
+			"consoleText": "Em forma de CLAD Reagir visualizações com elementos personalizados para widgets pesados; uma superfície de operador para arquivo, diário, sobreposições.",
+			"overlayTitle": "Sobreposição de superfícies",
+			"overlayTextBefore": "URLs de navegador separados (",
+			"overlayTextMid": ",",
+			"overlayTextAfter": ") alimentado pelo mesmo feed ao vivo e configuração visual salva.",
+			"ldpTitle": "Plano de dados local"
+		},
+		"featureAreas": {
+			"homeTitle": "Principal",
+			"homeSummary": "Carta de condução ao vivo ao lado do jogo.",
+			"homeB0": "Velocidade, combustível %, engrenagem, odómetro do instantâneo de telemetria ao vivo",
+			"homeB1": "Rota ativa e carga quando um trabalho está em andamento",
+			"homeB2": "Saúde e status de captura em um relance",
+			"dashboardTitle": "Painel",
+			"dashboardSummary": "Rollups e gráficos sobre seu arquivo — não a linha do tempo bruta.",
+			"dashboardB0": "Disposição editável com perfis que você pode salvar",
+			"dashboardB1": "Gráficos de séries temporais e listas de exceções de análises indexadas",
+			"dashboardB2": "Salta para o Arquivo quando um gráfico referencia um espaço específico",
+			"archiveTitle": "Arquivo",
+			"archiveSummary": "Memória da unidade pesquisável no disco.",
+			"archiveB1": "Linha de tempo com dobras hierárquicas e linhas virtualizadas",
+			"archiveB3": "Procurar tokens, filtros de alcance e detalhes do inspetor",
+			"archiveB4": "Visualização de carga útil SDK e diff vizinho para suporte/depuração",
+			"journalTitle": "Registo de sessão",
+			"journalSummary": "Leia arquivos de log Overlane — não um bloco de notas no aplicativo.",
+			"journalB0Before": "Listas simples",
+			"journalB0Between": "e girado",
+			"journalB0After": "arquivos no disco",
+			"journalB1": "Visualizador de log virtualizado com o estilo de ordenação e cauda",
+			"journalB2": "Baixar um arquivo; direcionando instantâneos ficar em Arquivo / Painel",
+			"deliveriesTitle": "Entregas",
+			"deliveriesSummary": "Histórico de trabalho dos registos de entrega apoiados por telemetria.",
+			"deliveriesB0": "Registo de entrega ordenável com painéis de resumo de tarefas",
+			"deliveriesB1": "Grupos de eventos e durações quando as análises estão disponíveis",
+			"deliveriesB2": "Abrir o detalhe sem sair da consola",
+			"overlaysTitle": "Sobreposições",
+			"overlaysSummary": "Fontes de navegador OBS do mesmo serviço local.",
+			"overlaysB0": "Painéis predefinidos (Velocidade, Controles, Contrato, ...) com miniaturas ao vivo",
+			"overlaysB1": "Configurar por painel, ordem métrica e aparência global de sobreposição",
+			"overlaysB2Before": "Construtor de ecrã completo em",
+			"overlaysB2Mid": "mais URLs métricas individuais em",
+			"settingsTitle": "Configurações",
+			"settingsSummary": "Conexão, armazenamento, anunciar e manutenção.",
+			"settingsB0": "Endereço de ligação, porta, URL base de sobreposição, unidades e aparência",
+			"settingsB1": "Assistente de ligação do jogo e instalação oficial do plugin de telemetria",
+			"settingsB2": "Manutenção de arquivos, exportação de cofres, alertas de velocidade, barra de salvamento sujo",
+			"referenceTitle": "Referência",
+			"referenceSummary": "SDK e glossário de captura para operadores.",
+			"referenceB0": "Canais SCS SDK oficiais vs Overlane fiação",
+			"referenceB1": "Caminho do MMF, chave live-feed e explicadores de status de captura"
+		},
+		"stickyBuyNow": "COMPRE AGORA",
+		"glossaryLabels": {
+			"layman": "Layman:",
+			"overlane": "Overlane:"
+		},
+		"glossary": {
+			"arrowIpc": {
+				"title": "Seta IPC",
+				"body": "Tabelas orientadas para colunas são transmitidas entre processos em formato binário compacto.",
+				"layman": "Um tubo largo que move colunas estilo planilha em massa.",
+				"ol": "O arquivo de área de trabalho usa isso para grandes janelas de linha do tempo."
+			},
+			"sse": {
+				"title": "Eventos Enviados pelo Servidor (SSE)",
+				"body": "Um canal HTTP unidirecional onde o servidor envia atualizações ao vivo para o navegador.",
+				"layman": "Sobreposição de páginas mantém uma conexão leve aberta para novos números.",
+				"ol": "URLs do painel se inscrever para velocidade ao vivo, trabalho e compor widgets."
+			},
+			"mmf": {
+				"title": "Ficheiro cartografado por memória (MMF)",
+				"body": "No Windows, compartilhou RAM o plugin de jogo e Overlane ambos map em.",
+				"layman": "Uma área de transferência partilhada tanto o jogo como o Overlane leram instantaneamente.",
+				"ol": "Caminho oficial usa Local\\OverlaneTelemetry via overlane-telemetry.dll."
+			},
+			"duckdb": {
+				"title": "PatoDB",
+				"body": "SQL analítico incorporado para arquivos locais sem um servidor de banco de dados separado.",
+				"layman": "Análise SQL em seus arquivos de viagem no disco.",
+				"ol": "Enviado em instaladores do Windows para viewports de arquivos e rollups."
+			},
+			"tantivy": {
+				"title": "Tantivy",
+				"body": "Mecanismo de pesquisa de texto completo para consultas rápidas sobre o texto do arquivo.",
+				"layman": "O que faz a busca-como-você-tipo sentir-se instantânea.",
+				"ol": "Indexa o diário e o texto do arquivo em sua máquina."
+			},
+			"parquet": {
+				"title": "Apache Parquet",
+				"body": "Arquivos colunares compactados adequados a fatos históricos frios.",
+				"layman": "Embalagem eficiente para viagens mais antigas no disco.",
+				"ol": "Armazenamento de camadas frias para observações arquivadas."
+			},
+			"sqlite": {
+				"title": "SQLite",
+				"body": "Banco de dados SQL incorporado usado como o livro de registros quente para observações recentes.",
+				"layman": "As notas de hoje chegam aqui primeiro.",
+				"ol": "A telemetria ao vivo não escreve aqui; ingerir faz quando a gravação está ligada."
+			},
+			"wal": {
+				"title": "SQLite WAL",
+				"body": "Registro de registro para leitura e escrita simultânea mais segura.",
+				"layman": "Navegue no arquivo enquanto novas linhas ainda pousam.",
+				"ol": "Modo de registro quente para sobreposição de ingestão."
+			},
+			"zstd": {
+				"title": "ZSTD",
+				"body": "Compressão moderna para arquivos frios menores.",
+				"layman": "Embalagem mais apertada para que os discos preencham mais devagar.",
+				"ol": "Usado quando as observações de nivelamento ao armazenamento a frio."
+			},
+			"fts": {
+				"title": "Pesquisa de texto completo (FTS)",
+				"body": "Índice invertido para pesquisa de palavras-chave sem analisar cada linha.",
+				"layman": "A tabela de pesquisa por trás da pesquisa de arquivos.",
+				"ol": "Funciona com filtros como @cargo: no console."
+			},
+			"clad": {
+				"title": "CLAD",
+				"body": "Design Agnóstico Camada Composable — pequenas unidades ligadas através de interfaces explícitas.",
+				"layman": "Blocos etiquetados em vez de um script emaranhado.",
+				"ol": "Como este site de marketing e o produto UI permanecem modulares."
+			},
+			"nsis": {
+				"title": "NSIS",
+				"body": "Tecnologia de instalação do Windows usada para pacotes de configuração Overlane.",
+				"layman": "O assistente familiar Next → Próximo instalador.",
+				"ol": "Produção e Demo são downloads separados."
+			},
+			"tauri": {
+				"title": "Tauri",
+				"body": "Native Windows shell hospedando o console web e ciclo de vida de serviço local.",
+				"layman": "A embalagem do aplicativo desktop em torno da consola do navegador.",
+				"ol": "Boot splash, health-gated startup, pacote de telemetria DLL."
+			},
+			"loopback": {
+				"title": "Ligar loopback",
+				"body": "HTTP escuta no localhost a menos que você opte pela exposição à LAN em Configurações.",
+				"layman": "Overlane fala no seu PC por padrão – não em todo o café Wi-Fi.",
+				"ol": "Padrão para console e URLs de sobreposição."
+			},
+			"sidecar": {
+				"title": "Processo sidecar",
+				"body": "Serviço de acompanhante para API, alimentação ao vivo, ingestão e arquivo.",
+				"layman": "O motor em execução enquanto a janela do ecrã está aberta.",
+				"ol": "Iniciada pelo aplicativo desktop no lançamento."
+			},
+			"spa": {
+				"title": "Aplicativo de página única (SPA)",
+				"body": "UI Web que troca views sem reloads de página inteira.",
+				"layman": "Uma janela; pule entre Arquivo, Diário, Configurações.",
+				"ol": "A experiência do console do operador."
+			},
+			"scsSdk": {
+				"title": "SCS SDK",
+				"body": "Plug-in oficial SDK para a telemetria ETS2 e ATS.",
+				"layman": "O gancho que lê o que o camião está a fazer no jogo.",
+				"ol": "overlane-telemetry.dll visa este SDK."
+			},
+			"oltp": {
+				"title": "OLTP",
+				"body": "Muitos pequenos e rápidos escrevem enquanto conduzes.",
+				"layman": "Gravar cada momento como acontece.",
+				"ol": "Afinação quente para ingerir."
+			}
+		},
+		"tabsAria": "Secções de produtos"
+	},
+	"guides": {
+		"gettingStarted": {
+			"title": "Começar",
+			"lead": "Overlane é executado no seu PC. Nada é carregado da sua máquina por padrão.",
+			"b0": "Obtenha o mais recente instalador do Windows dehttps://short.army/overlane(Compre agora o cartão depois de rolar).",
+			"b1": "Execute o instalador e inicie o Overlane no menu Iniciar.",
+			"b2": "Siga o assistente de link do jogo: escolha sua pasta ETS2 ou ATS e instale o plugin oficial de telemetria quando solicitado.",
+			"b3": "Abra Sobreposições e copie um URL de painel no OBS ou um navegador ao lado do jogo.",
+			"b4": "Opcional: habilitar a gravação em Configurações → Armazenamento para timelines e pesquisa."
+		},
+		"playerGuide": {
+			"title": "Guia do jogador",
+			"lead0": "Você precisa de um plugin de telemetria suportado na pasta de plugins do jogo e no aplicativo Overlane Windows.",
+			"b0": "Carregue um perfil no jogo — a faixa de saúde do console mostra quando a telemetria está ao vivo.",
+			"b1": "Abrir casa para o cartão de condução ao vivo: velocidade, combustível, engrenagem, odômetro e rota ativa quando você está em um trabalho.",
+			"b2": "Use Sobreposições para copiar URLs de painel em seu aplicativo de streaming.",
+			"b3": "Menu da bandeja: abra o console ou saia antes de executar uma atualização do instalador.",
+			"b4": "Overlane Demo inclui dados de amostra para que você possa explorar sem o jogo."
+		},
+		"license": {
+			"title": "Aviso de propriedade",
+			"p0": "Copyright © Strixun. Todos os direitos reservados.",
+			"p1": "Overlane é um software proprietário. Este repositório público contém apenas materiais de marketing e binários de lançamento.",
+			"p2": "Você não pode copiar, modificar ou redistribuir o software, exceto conforme permitido pelo seu contrato de licença ou os termos da versão que você baixou.",
+			"p3": "Os instaladores enviados incluem componentes de terceiros sob suas próprias licenças."
+		},
+		"downloads": {
+			"title": "Instaladores de janelas",
+			"p0": "Produção Overlane inclui telemetria ao vivo e a pilha de arquivos completa.",
+			"p1": "Overlane Demo permite explorar o console com telemetria de amostra — nenhum jogo necessário."
+		}
+	}
+} as Translation;
+
+export default translation;

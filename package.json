@@ -1,0 +1,46 @@
+{
+  "name": "overlane-marketing-site",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Public marketing site for Overlane (GitHub Pages)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "i18n:sync": "node scripts/i18n-sync-locale-modules.mjs",
+    "i18n:stub": "node scripts/i18n-stub-locales.mjs",
+    "i18n:translate": "node ../scripts/i18n/i18n-translate-locales.mjs --package public-github",
+    "i18n:translate:full": "node ../scripts/i18n/i18n-translate-locales.mjs --package public-github --full",
+    "i18n:translate:stub": "node ../scripts/i18n/i18n-translate-locales.mjs --package public-github --stub",
+    "i18n:translate:bootstrap-meta": "node ../scripts/i18n/i18n-translate-locales.mjs --package public-github --bootstrap-meta",
+    "i18n:refresh": "npm run i18n:translate && npm run i18n:sync && typesafe-i18n --no-watch",
+    "i18n:refresh:full": "npm run i18n:translate:full && npm run i18n:sync && typesafe-i18n --no-watch",
+    "i18n:refresh:stub": "npm run i18n:translate:stub && npm run i18n:sync && typesafe-i18n --no-watch",
+    "i18n:audit": "node ../scripts/i18n/i18n-audit.mjs",
+    "i18n:generate": "npm run i18n:sync && typesafe-i18n --no-watch",
+    "l10n:refresh": "node ../scripts/i18n/l10n-refresh.mjs",
+    "l10n:refresh:full": "node ../scripts/i18n/l10n-refresh.mjs --full",
+    "l10n:refresh:stub": "node ../scripts/i18n/l10n-refresh.mjs --stub",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "happy-dom": "^17.4.4",
+    "sass": "^1.86.0",
+    "typesafe-i18n": "~5.27.1",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.2.4"
+  }
+}
