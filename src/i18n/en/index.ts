@@ -514,7 +514,7 @@ const translation = {
 		"license": {
 			"title": "Proprietary notice",
 			"p0": "Copyright © Strixun. All rights reserved.",
-			"p1": "Overlane is proprietary software. This public repository contains marketing materials and release binaries only.",
+			"p1": "Overlane is proprietary software. This public site is marketing materials only — Windows installers ship through licensed purchase channels, not this repository.",
 			"p2": "You may not copy, modify, or redistribute the software except as permitted by your license agreement or the terms on the release you downloaded.",
 			"p3": "Shipped installers include third-party components under their own licenses."
 		},

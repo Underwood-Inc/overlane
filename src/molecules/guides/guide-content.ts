@@ -53,12 +53,3 @@ export function licenseNotice(): GuideSection {
         ],
     };
 }
-
-export function downloadGuide(): GuideSection {
-    const LL = getLL();
-    return {
-        id: "site-downloads",
-        title: LL.guides.downloads.title(),
-        paragraphs: [LL.guides.downloads.p0(), LL.guides.downloads.p1()],
-    };
-}

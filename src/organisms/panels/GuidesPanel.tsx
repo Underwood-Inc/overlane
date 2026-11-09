@@ -1,7 +1,6 @@
 import { MarketingCard } from "../../atoms/MarketingCard.js";
 import { BUY_NOW_URL } from "../../molecules/marketing/product-url.js";
 import {
-    downloadGuide,
     gettingStartedGuide,
     licenseNotice,
     playerGuide,
@@ -18,9 +17,6 @@ export function GuidesPanel() {
                 <p className="marketing-lead">{g.onPageLead()}</p>
                 <ul className="marketing-link-list">
                     <li>
-                        <a href="#site-downloads">{g.linkDownloads()}</a>
-                    </li>
-                    <li>
                         <a href="#site-getting-started">{g.linkGettingStarted()}</a>
                     </li>
                     <li>
@@ -31,7 +27,6 @@ export function GuidesPanel() {
                     </li>
                 </ul>
             </MarketingCard>
-            <SiteGuideBlock section={downloadGuide()} />
             <MarketingCard title={g.getOverlaneTitle()}>
                 <p>
                     <a className="marketing-link" href={BUY_NOW_URL} rel="noopener noreferrer">
