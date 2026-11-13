@@ -7,7 +7,7 @@ import { OverlaneI18nProvider } from "../organisms/OverlaneI18nProvider.js";
 afterEach(() => cleanup());
 
 describe("ProductMarketingView", () => {
-    test("renders hero and default features tab content", () => {
+    test("renders hero, scroll sections, and product tour", () => {
         render(
             <OverlaneI18nProvider initialLocale="en">
                 <GlossaryProvider>
@@ -15,9 +15,11 @@ describe("ProductMarketingView", () => {
                 </GlossaryProvider>
             </OverlaneI18nProvider>,
         );
-        expect(screen.getByRole("heading", { name: "Overlane" })).toBeTruthy();
-        expect(screen.getByRole("heading", { name: /console you run beside the game/i })).toBeTruthy();
-        expect(screen.getByText(/Built for the long haul/i)).toBeTruthy();
+        expect(screen.getByRole("heading", { name: /Drive with a live map/i })).toBeTruthy();
+        expect(screen.getByRole("heading", { name: /Three steps beside the game/i })).toBeTruthy();
+        expect(screen.getByRole("heading", { name: /What you get on day one/i })).toBeTruthy();
+        expect(screen.getByRole("heading", { name: /Install options/i })).toBeTruthy();
+        expect(screen.queryByRole("tablist", { name: /Product sections/i })).toBeNull();
         expect(screen.queryByRole("link", { name: /private/i })).toBeNull();
     });
 

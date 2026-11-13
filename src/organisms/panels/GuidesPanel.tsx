@@ -1,6 +1,7 @@
 import { MarketingCard } from "../../atoms/MarketingCard.js";
-import { BUY_NOW_URL } from "../../molecules/marketing/product-url.js";
+import { BUY_NOW_URL, GITHUB_RELEASES_URL } from "../../molecules/marketing/product-url.js";
 import {
+    downloadsGuide,
     gettingStartedGuide,
     licenseNotice,
     playerGuide,
@@ -16,6 +17,9 @@ export function GuidesPanel() {
             <MarketingCard title={g.onPageTitle()}>
                 <p className="marketing-lead">{g.onPageLead()}</p>
                 <ul className="marketing-link-list">
+                    <li>
+                        <a href="#site-downloads">{g.linkDownloads()}</a>
+                    </li>
                     <li>
                         <a href="#site-getting-started">{g.linkGettingStarted()}</a>
                     </li>
@@ -33,7 +37,13 @@ export function GuidesPanel() {
                         {BUY_NOW_URL}
                     </a>
                 </p>
+                <p className="marketing-fine">
+                    <a className="marketing-link" href={GITHUB_RELEASES_URL} rel="noopener noreferrer">
+                        {GITHUB_RELEASES_URL}
+                    </a>
+                </p>
             </MarketingCard>
+            <SiteGuideBlock section={downloadsGuide()} />
             <SiteGuideBlock section={gettingStartedGuide()} />
             <SiteGuideBlock section={playerGuide()} />
             <SiteGuideBlock section={licenseNotice()} />

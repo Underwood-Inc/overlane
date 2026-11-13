@@ -1,48 +1,36 @@
 import { MarketingHero } from "../organisms/MarketingHero.js";
-import { ArchitecturePanel, DataPanel, DesktopPanel, LivePanel, TrustPanel } from "../organisms/panels/SimplePanels.js";
-import { FeaturesPanel } from "../organisms/panels/FeaturesPanel.js";
 import { GuidesPanel } from "../organisms/panels/GuidesPanel.js";
-import { MarketingTabBar } from "../molecules/marketing/MarketingTabBar.js";
 import { useMarketingHash } from "../molecules/marketing/useMarketingHash.js";
-import type { MarketingTabId } from "../molecules/marketing/marketing-tabs.js";
-import type { ReactElement } from "react";
 import { StickyBuyNowCard } from "../organisms/StickyBuyNowCard.js";
 import { MarketingParallaxBackdrop } from "../organisms/MarketingParallaxBackdrop.js";
 import { MarketingShowcase } from "../organisms/MarketingShowcase.js";
 import { MarketingLocalePicker } from "../molecules/marketing/MarketingLocalePicker.js";
+import { MarketingPageAnchors } from "../molecules/marketing/MarketingPageAnchors.js";
+import { InstallOptionsSection } from "../molecules/marketing/InstallOptionsSection.js";
+import { MarketingOutcomesSection } from "../organisms/MarketingOutcomesSection.js";
+import { MarketingPowerUserSection } from "../organisms/MarketingPowerUserSection.js";
 import { useLL } from "../organisms/OverlaneI18nProvider.js";
-
-const PANELS: Record<MarketingTabId, () => ReactElement> = {
-    features: FeaturesPanel,
-    architecture: ArchitecturePanel,
-    data: DataPanel,
-    live: LivePanel,
-    desktop: DesktopPanel,
-    trust: TrustPanel,
-    docs: GuidesPanel,
-};
 
 export function ProductMarketingView() {
     const LL = useLL();
-    const { tab, setTab, goToGuide } = useMarketingHash();
+    const { goToGuide, powerUserOpen } = useMarketingHash();
 
-    const ActivePanel = PANELS[tab];
+    const scrollToTour = () => {
+        document.getElementById("product-tour")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
 
     return (
-        <div className="marketing-app">
+        <div className="marketing-app marketing-app--scroll">
             <MarketingParallaxBackdrop />
             <StickyBuyNowCard />
-            <MarketingHero
-                onGuide={goToGuide}
-                onExplore={() => {
-                    setTab("features");
-                    requestAnimationFrame(() => document.getElementById("panel-features")?.scrollIntoView());
-                }}
-            />
+            <MarketingPageAnchors />
+            <MarketingHero onGuide={goToGuide} onTour={scrollToTour} />
             <MarketingShowcase />
-            <main className="marketing-main marketing-main--elevated">
-                <MarketingTabBar active={tab} onSelect={setTab} />
-                <ActivePanel />
+            <main className="marketing-main marketing-main--scroll">
+                <MarketingOutcomesSection />
+                <InstallOptionsSection />
+                <MarketingPowerUserSection open={powerUserOpen} />
+                <GuidesPanel />
             </main>
             <footer className="marketing-footer">
                 <MarketingLocalePicker />

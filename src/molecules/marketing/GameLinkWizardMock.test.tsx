@@ -10,8 +10,8 @@ describe("GameLinkWizardMock", () => {
                 <GameLinkWizardMock />
             </OverlaneI18nProvider>,
         );
-        const root = screen.getByText(/Link your game/i).closest(".ui-mock--wizard");
+        const root = screen.getByText(/Game setup/i).closest(".ui-mock--wizard");
         expect(root?.getAttribute("aria-hidden")).toBe("true");
-        expect(screen.getByText(/Test live speed/i)).toBeTruthy();
+        expect(screen.getByText(/Verify connection/i)).toBeTruthy();
     });
 });

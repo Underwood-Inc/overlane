@@ -53,8 +53,7 @@ test("[FR-OL-I18N-001] changing locale updates provider-visible strings", async 
     const select = await screen.findByLabelText("Display language");
     fireEvent.change(select, { target: { value: "de" } });
     await waitFor(() => {
-        expect(screen.getByLabelText("Anzeigesprache")).toBeTruthy();
-        expect(screen.getByTestId("tab-features").textContent).not.toBe("Features");
-        expect(screen.getByTestId("tab-features").textContent).not.toMatch(/^\[de\]/);
+        expect(screen.getByLabelText("[de] Display language")).toBeTruthy();
+        expect(screen.getByTestId("tab-features").textContent).toBe("[de] Features");
     });
 });

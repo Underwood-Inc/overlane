@@ -53,3 +53,13 @@ export function licenseNotice(): GuideSection {
         ],
     };
 }
+
+export function downloadsGuide(): GuideSection {
+    const LL = getLL();
+    return {
+        id: "site-downloads",
+        title: LL.guides.downloads.title(),
+        paragraphs: [LL.guides.downloads.p0(), LL.guides.downloads.p1(), LL.guides.downloads.p2()],
+        bullets: [LL.guides.downloads.b0(), LL.guides.downloads.b1(), LL.guides.downloads.b2()],
+    };
+}

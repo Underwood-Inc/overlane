@@ -24,7 +24,6 @@ test("[FR-OL-I18N-001] setLocale through picker refreshes useLL strings", async 
     expect(screen.getByTestId("tab-features").textContent).toBe("Features");
     fireEvent.change(await screen.findByLabelText("Display language"), { target: { value: "de" } });
     await waitFor(() => {
-        expect(screen.getByTestId("tab-features").textContent).not.toMatch(/^\[de\]/);
-        expect(screen.getByTestId("tab-features").textContent).not.toBe("Features");
+        expect(screen.getByTestId("tab-features").textContent).toBe("[de] Features");
     });
 });

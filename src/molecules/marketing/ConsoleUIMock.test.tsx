@@ -10,7 +10,7 @@ describe("ConsoleUIMock", () => {
                 <ConsoleUIMock />
             </OverlaneI18nProvider>,
         );
-        const root = screen.getByText("Telemetry live").closest(".ui-mock--console");
+        const root = screen.getByText("Game linked").closest(".ui-mock--console");
         expect(root?.getAttribute("aria-hidden")).toBe("true");
         expect(screen.getByText("Live driving")).toBeTruthy();
         expect(screen.getByText("Hamburg → Prague")).toBeTruthy();

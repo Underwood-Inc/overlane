@@ -19,7 +19,7 @@ export function JournalMock() {
     return (
         <MockConsoleShell activeNav="journal" className="ui-mock--compact">
             <div className="ui-mock__health">
-                <span className="ui-mock__pill">2 log files</span>
+                <span className="ui-mock__pill">{mocks.logFileCount()}</span>
                 <span className="ui-mock__pill ui-mock__pill--ok">{mocks.tailFollow()}</span>
             </div>
             <div className="ui-mock__content ui-mock__content--journal ui-mock__journal-split">
@@ -35,7 +35,7 @@ export function JournalMock() {
                     </ul>
                 </div>
                 <div className="ui-mock__journal-viewer">
-                    <p className="ui-mock__section-label">overlane-2026-11-09.log</p>
+                    <p className="ui-mock__section-label">{mocks.sampleLogFile()}</p>
                     <ul className="ui-mock__journal ui-mock__journal--log">
                         {LOG_LINES.map((row) => (
                             <li key={row.time}>

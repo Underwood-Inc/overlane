@@ -24,9 +24,14 @@ export function marketingTabs(): { id: MarketingTabId; label: string }[] {
     ];
 }
 
-export type SiteGuideHash = "#site-getting-started" | "#site-player-guide" | "#site-license";
+export type SiteGuideHash =
+    | "#site-downloads"
+    | "#site-getting-started"
+    | "#site-player-guide"
+    | "#site-license";
 
 export const SITE_GUIDE_HASHES = new Set<string>([
+    "#site-downloads",
     "#site-getting-started",
     "#site-player-guide",
     "#site-license",

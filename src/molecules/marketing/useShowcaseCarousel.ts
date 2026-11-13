@@ -1,10 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
-export const SHOWCASE_CAROUSEL_MS = 6500;
-
-export function useShowcaseCarousel(slideCount: number, intervalMs = SHOWCASE_CAROUSEL_MS) {
+export function useShowcaseCarousel(slideCount: number) {
     const [index, setIndex] = useState(0);
-    const [paused, setPaused] = useState(false);
 
     const goTo = useCallback(
         (next: number) => {
@@ -20,19 +17,5 @@ export function useShowcaseCarousel(slideCount: number, intervalMs = SHOWCASE_CA
     const next = useCallback(() => goTo(index + 1), [goTo, index]);
     const prev = useCallback(() => goTo(index - 1), [goTo, index]);
 
-    useEffect(() => {
-        if (slideCount <= 1 || paused) {
-            return;
-        }
-        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (reduced) {
-            return;
-        }
-        const id = window.setInterval(() => {
-            setIndex((i) => (i + 1) % slideCount);
-        }, intervalMs);
-        return () => window.clearInterval(id);
-    }, [slideCount, intervalMs, paused]);
-
-    return { index, goTo, next, prev, paused, setPaused };
+    return { index, goTo, next, prev };
 }

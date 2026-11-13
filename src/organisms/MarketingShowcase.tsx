@@ -5,7 +5,7 @@ export function MarketingShowcase() {
     const LL = useLL();
     const s = LL.marketing.showcase;
     return (
-        <section className="marketing-showcase" aria-labelledby="marketing-showcase-heading">
+        <section className="marketing-showcase" id="product-tour" aria-labelledby="marketing-showcase-heading">
             <div className="marketing-showcase__intro">
                 <h2 id="marketing-showcase-heading">{s.heading()}</h2>
                 <p className="marketing-lead">{s.lead()}</p>

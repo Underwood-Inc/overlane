@@ -5,7 +5,7 @@ import { ShowcaseFeatureBand } from "./ShowcaseFeatureBand.js";
 describe("ShowcaseFeatureBand", () => {
     test("renders pillar title and mock slot", () => {
         render(
-            <ShowcaseFeatureBand pillar="Data" title="Archive" blurb="Scrub history.">
+            <ShowcaseFeatureBand pillar="Data" title="Archive" blurb="Searchable timeline on disk.">
                 <span>Mock child</span>
             </ShowcaseFeatureBand>,
         );

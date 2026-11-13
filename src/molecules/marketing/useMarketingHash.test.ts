@@ -14,6 +14,7 @@ describe("useMarketingHash", () => {
     test("setTab updates hash", () => {
         const { result } = renderHook(() => useMarketingHash());
         act(() => result.current.setTab("trust"));
+        expect(window.location.search).toBe("?tab=trust");
         expect(window.location.hash).toBe("#panel-trust");
         expect(result.current.tab).toBe("trust");
     });

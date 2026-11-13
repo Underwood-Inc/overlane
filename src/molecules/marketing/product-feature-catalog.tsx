@@ -11,9 +11,51 @@ export type ProductFeatureArea = {
     bullets: ReactNode[];
 };
 
+export function homeOutcomeFeatureAreas(): ProductFeatureArea[] {
+    const LL = getLL();
+    const h = LL.marketing.homeOutcomes;
+    const ext = LL.marketing.codeExtensions;
+    return [
+        {
+            id: "live-archive",
+            title: h.liveArchiveTitle(),
+            summary: h.liveArchiveSummary(),
+            bullets: [h.liveArchiveB0(), h.liveArchiveB1()],
+        },
+        {
+            id: "overlays",
+            title: h.overlaysTitle(),
+            summary: h.overlaysSummary(),
+            bullets: [h.overlaysB0(), h.overlaysB1()],
+        },
+        {
+            id: "journal",
+            title: h.journalTitle(),
+            summary: h.journalSummary(),
+            bullets: [
+                <>
+                    {h.journalB0Before()}
+                    <MarketingCode>{ext.log()}</MarketingCode>
+                    {h.journalB0Between()}
+                    <MarketingCode>{ext.logGz()}</MarketingCode>
+                    {h.journalB0After()}
+                </>,
+                h.journalB1(),
+            ],
+        },
+        {
+            id: "worker",
+            title: h.workerTitle(),
+            summary: h.workerSummary(),
+            bullets: [h.workerB0(), h.workerB1()],
+        },
+    ];
+}
+
 export function consoleFeatureAreas(): ProductFeatureArea[] {
     const LL = getLL();
     const a = LL.marketing.featureAreas;
+    const ext = LL.marketing.codeExtensions;
     return [
         {
             id: "home",
@@ -45,9 +87,9 @@ export function consoleFeatureAreas(): ProductFeatureArea[] {
             bullets: [
                 <>
                     {a.journalB0Before()}
-                    <MarketingCode>.log</MarketingCode>
+                    <MarketingCode>{ext.log()}</MarketingCode>
                     {a.journalB0Between()}
-                    <MarketingCode>.log.gz</MarketingCode>
+                    <MarketingCode>{ext.logGz()}</MarketingCode>
                     {a.journalB0After()}
                 </>,
                 a.journalB1(),

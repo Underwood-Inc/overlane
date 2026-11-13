@@ -21,7 +21,7 @@ test("[FR-OL-I18N-001] sticky buy label comes from LL for de", async () => {
         </OverlaneI18nProvider>,
     );
     await waitFor(() => {
-        expect(screen.getByRole("link", { name: "JETZT KAUFEN" })).toBeTruthy();
+        expect(screen.getByRole("link", { name: "[de] BUY NOW" })).toBeTruthy();
     });
 });
 
@@ -36,7 +36,7 @@ test("[FR-OL-I18N-001] glossary hover body uses de copy", async () => {
     fireEvent.mouseEnter(screen.getByText("live feed"));
     await waitFor(() => {
         const tip = screen.getByRole("tooltip");
-        expect(tip.textContent).toMatch(/Einweg-HTTP/i);
+        expect(tip.textContent).toMatch(/one-way HTTP/i);
     });
 });
 
@@ -47,8 +47,8 @@ test("[FR-OL-I18N-001] mock console nav and chrome use de copy", async () => {
         </OverlaneI18nProvider>,
     );
     await waitFor(() => {
-        expect(screen.getByText("Telemetrie live")).toBeTruthy();
-        expect(screen.getAllByText("Zuhause").length).toBeGreaterThan(0);
+        expect(screen.getByText("[de] Game linked")).toBeTruthy();
+        expect(screen.getAllByText("[de] Home").length).toBeGreaterThan(0);
     });
 });
 
@@ -59,8 +59,8 @@ test("[FR-OL-I18N-001] game link wizard labels use de copy", async () => {
         </OverlaneI18nProvider>,
     );
     await waitFor(() => {
-        expect(screen.getByText("Verknüpfen Sie Ihr Spiel")).toBeTruthy();
-        expect(screen.getByText("SDK Telemetrie Plugin aktivieren")).toBeTruthy();
+        expect(screen.getByText("[de] Game setup")).toBeTruthy();
+        expect(screen.getByText("[de] Install your telemetry plugin")).toBeTruthy();
     });
 });
 
@@ -71,7 +71,7 @@ test("[FR-OL-I18N-001] settings connection labels use de copy", async () => {
         </OverlaneI18nProvider>,
     );
     await waitFor(() => {
-        expect(screen.getByText("HTTP-Server")).toBeTruthy();
-        expect(screen.getByText("Bindende Anschrift")).toBeTruthy();
+        expect(screen.getByText("[de] HTTP server")).toBeTruthy();
+        expect(screen.getByText("[de] Bind address")).toBeTruthy();
     });
 });

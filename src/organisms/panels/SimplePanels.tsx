@@ -162,13 +162,14 @@ export function LivePanel() {
 export function DesktopPanel() {
     const LL = useLL();
     const p = LL.marketing.panels.desktop;
+    const g = LL.marketing.glossaryTermText;
     return (
         <section className="marketing-tab-panel" id="panel-desktop" role="tabpanel" aria-labelledby="tab-desktop">
             <MarketingCard title={p.title()}>
                 <p className="marketing-lead">
-                    <GlossaryTerm id="tauri">Tauri</GlossaryTerm>
+                    <GlossaryTerm id="tauri">{g.tauri()}</GlossaryTerm>
                     {p.leadBetween()}
-                    <GlossaryTerm id="nsis">NSIS</GlossaryTerm>
+                    <GlossaryTerm id="nsis">{g.nsis()}</GlossaryTerm>
                     {p.leadAfter()}
                 </p>
                 <table className="marketing-table">
@@ -192,6 +193,10 @@ export function DesktopPanel() {
                         </tr>
                     </tbody>
                 </table>
+                <p className="marketing-callout">
+                    <strong>{p.installCalloutStrong()}</strong>
+                    {p.installCalloutBody()}
+                </p>
             </MarketingCard>
         </section>
     );
@@ -200,6 +205,7 @@ export function DesktopPanel() {
 export function TrustPanel() {
     const LL = useLL();
     const p = LL.marketing.panels.trust;
+    const g = LL.marketing.glossaryTermText;
     return (
         <section className="marketing-tab-panel" id="panel-trust" role="tabpanel" aria-labelledby="tab-trust">
             <MarketingCard title={p.title()}>
@@ -207,10 +213,11 @@ export function TrustPanel() {
                 <p className="marketing-callout amber">
                     <strong>{p.calloutStrong()}</strong>
                     {p.calloutBefore()}
-                    <GlossaryTerm id="loopback">localhost only</GlossaryTerm>
+                    <GlossaryTerm id="loopback">{g.loopback()}</GlossaryTerm>
                     {p.calloutAfter()}
                 </p>
                 <p>{p.footer()}</p>
+                <p className="marketing-fine">{p.noServiceNote()}</p>
             </MarketingCard>
         </section>
     );

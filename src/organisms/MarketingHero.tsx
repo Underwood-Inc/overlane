@@ -1,72 +1,52 @@
 import { Badge } from "../atoms/Badge.js";
-import { MarketingCode } from "../atoms/MarketingCode.js";
-import { StatTile } from "../atoms/StatTile.js";
-import { GlossaryTerm } from "../molecules/glossary/GlossaryProvider.js";
+import { ConsoleUIMock } from "../molecules/marketing/ConsoleUIMock.js";
 import type { SiteGuideHash } from "../molecules/marketing/marketing-tabs.js";
+import { BUY_NOW_URL } from "../molecules/marketing/product-url.js";
 import { useLL } from "./OverlaneI18nProvider.js";
 
 export type MarketingHeroProps = {
     onGuide: (hash: SiteGuideHash) => void;
-    onExplore: () => void;
+    onTour: () => void;
 };
 
-export function MarketingHero({ onGuide, onExplore }: MarketingHeroProps) {
+export function MarketingHero({ onGuide, onTour }: MarketingHeroProps) {
     const LL = useLL();
     return (
         <header className="marketing-hero marketing-hero--landing">
+            <p className="marketing-hero-eyebrow">{LL.marketing.heroEyebrow()}</p>
             <div className="marketing-hero-grid marketing-hero-grid--landing">
                 <div className="marketing-hero-copy">
-                    <h1>{LL.marketing.heroTitle()}</h1>
-                    <p className="marketing-tagline">
-                        <span className="em">{LL.marketing.heroTaglineLead()}</span>
-                        {LL.marketing.heroTaglineRest()}
-                        <span className="em">{LL.marketing.heroTaglineEm()}</span>
-                        {LL.marketing.heroTaglineEnd()}
-                    </p>
-                    <div className="marketing-badge-row">
-                        <Badge>{LL.marketing.badgeLocalFirst()}</Badge>
-                        <Badge>{LL.marketing.badgeWindows()}</Badge>
-                        <Badge>{LL.marketing.badgeNoCloud()}</Badge>
-                        <Badge>{LL.marketing.badgeStreamer()}</Badge>
-                    </div>
-                    <p className="marketing-hero-cta">
-                        <button type="button" className="marketing-link-btn" onClick={() => onGuide("#site-player-guide")}>
-                            {LL.marketing.playerGuide()}
+                    <h1 className="marketing-hero-title">{LL.marketing.heroTitle()}</h1>
+                    <p className="marketing-hero-subhead">{LL.marketing.heroSubhead()}</p>
+                    <div className="marketing-hero-actions">
+                        <a className="marketing-btn marketing-btn--primary" href={BUY_NOW_URL} rel="noopener noreferrer">
+                            {LL.marketing.heroCtaDownload()}
+                        </a>
+                        <button type="button" className="marketing-btn marketing-btn--ghost" onClick={onTour}>
+                            {LL.marketing.heroCtaTour()}
                         </button>
+                    </div>
+                    <p className="marketing-hero-secondary-cta">
                         <button
                             type="button"
-                            className="marketing-link-btn"
-                            onClick={() => onGuide("#site-getting-started")}
+                            className="marketing-link-btn marketing-link-btn--subtle"
+                            onClick={() => onGuide("#site-downloads")}
                         >
-                            {LL.marketing.gettingStarted()}
-                        </button>
-                        <button type="button" className="marketing-link-btn" onClick={onExplore}>
-                            {LL.marketing.exploreFeatures()}
+                            {LL.marketing.heroCtaDemo()}
+                            <span className="marketing-hero-demo-hint"> — {LL.marketing.heroCtaDemoSub()}</span>
                         </button>
                     </p>
                     <p className="marketing-fine">{LL.marketing.proprietaryFine()}</p>
                 </div>
-                <div className="marketing-stat-grid marketing-hero-stats">
-                    <StatTile
-                        label={LL.marketing.statLive()}
-                        detail={
-                            <>
-                                <GlossaryTerm id="sse">SSE</GlossaryTerm> overlay panels from{" "}
-                                <GlossaryTerm id="mmf">shared memory</GlossaryTerm>
-                            </>
-                        }
-                    />
-                    <StatTile label={LL.marketing.statArchive()} detail={LL.marketing.statArchiveDetail()} />
-                    <StatTile
-                        label={LL.marketing.statJournal()}
-                        detail={
-                            <>
-                                On-disk <MarketingCode>.log</MarketingCode> files + line viewer
-                            </>
-                        }
-                    />
-                    <StatTile label={LL.marketing.statVault()} detail={LL.marketing.statVaultDetail()} />
+                <div className="marketing-hero-mock" aria-hidden="true">
+                    <ConsoleUIMock />
                 </div>
+            </div>
+            <div className="marketing-proof-chips" role="list">
+                <Badge>{LL.marketing.heroProofLive()}</Badge>
+                <Badge>{LL.marketing.heroProofOverlays()}</Badge>
+                <Badge>{LL.marketing.heroProofJournal()}</Badge>
+                <Badge>{LL.marketing.heroProofWorker()}</Badge>
             </div>
         </header>
     );

@@ -10,14 +10,14 @@ export function ConsoleUIMock() {
     return (
         <MockConsoleShell activeNav="home">
             <div className="ui-mock__health">
-                <span className="ui-mock__pill ui-mock__pill--ok">{mocks.telemetryLive()}</span>
-                <span className="ui-mock__pill ui-mock__pill--rec">{mocks.archiveRecording()}</span>
-                <span className="ui-mock__pill">{mocks.journalIdle()}</span>
+                <span className="ui-mock__pill ui-mock__pill--ok">{mocks.gameLinked()}</span>
+                <span className="ui-mock__pill ui-mock__pill--rec">{mocks.archiveOn()}</span>
+                <span className="ui-mock__pill">{mocks.journalOn()}</span>
             </div>
             <div className="ui-mock__content">
                 <div className="ui-mock__live-head">
                     <h3 className="ui-mock__live-title">{mocks.liveDriving()}</h3>
-                    <span className="ui-mock__live-status">{mocks.liveFromGame()}</span>
+                    <span className="ui-mock__live-status">{mocks.onJob()}</span>
                 </div>
                 <div className="ui-mock__live-panel">
                     <p className="ui-mock__live-speed">
@@ -38,13 +38,6 @@ export function ConsoleUIMock() {
                     <p className="ui-mock__live-cargo">
                         {cargo} · {deliveryStatus}
                     </p>
-                </div>
-                <div className="ui-mock__timeline" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span className="is-hot" />
-                    <span />
-                    <span />
                 </div>
             </div>
         </MockConsoleShell>

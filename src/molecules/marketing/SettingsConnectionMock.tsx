@@ -7,7 +7,7 @@ export function SettingsConnectionMock() {
     return (
         <MockConsoleShell activeNav="settings" className="ui-mock--compact">
             <div className="ui-mock__health">
-                <span className="ui-mock__pill ui-mock__pill--ok">{mocks.serverRunning()}</span>
+                <span className="ui-mock__pill ui-mock__pill--ok">{mocks.workerReady()}</span>
                 <span className="ui-mock__pill ui-mock__pill--ok">{mocks.gameLinked()}</span>
             </div>
             <div className="ui-mock__content ui-mock__content--settings">
@@ -23,7 +23,7 @@ export function SettingsConnectionMock() {
                     </div>
                     <div>
                         <dt>{mocks.overlayBaseUrl()}</dt>
-                        <dd className="ui-mock__mono">http://127.0.0.1:8080/overlay/</dd>
+                        <dd className="ui-mock__mono">http://127.0.0.1:8080</dd>
                     </div>
                 </dl>
                 <p className="ui-mock__section-label">{mocks.gameLink()}</p>

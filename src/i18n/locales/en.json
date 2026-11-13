@@ -107,15 +107,25 @@
     }
   },
   "marketing": {
-    "heroTitle": "Overlane",
+    "heroEyebrow": "Overlane",
+    "heroTitle": "Drive with a live map, a mile-by-mile archive, and stream overlays",
+    "heroSubhead": "One Windows app for ETS2 and ATS — console beside the game, OBS browser sources, no cloud account.",
     "heroTaglineLead": "One local stack",
     "heroTaglineRest": " on your PC: telemetry console, searchable drive archive, session journal, and",
     "heroTaglineEm": "OBS-ready",
     "heroTaglineEnd": " overlay panels for Euro Truck Simulator 2 and American Truck Simulator.",
+    "heroCtaTour": "See how it works",
+    "heroProofLive": "Live + archive on your PC",
+    "heroProofOverlays": "OBS-ready overlays",
+    "heroProofJournal": "Session journal on disk",
+    "heroProofWorker": "Local worker — no sign-in",
     "badgeLocalFirst": "Local-first",
-    "badgeWindows": "Windows desktop + browser",
+    "badgeWindows": "Windows · NSIS installers",
     "badgeNoCloud": "No cloud account",
     "badgeStreamer": "Streamer-ready",
+    "heroCtaDownload": "Download for Windows",
+    "heroCtaDemo": "Try Demo installer",
+    "heroCtaDemoSub": "Mock telemetry — no game",
     "playerGuide": "Player guide",
     "gettingStarted": "Getting started",
     "exploreFeatures": "Explore features ↓",
@@ -124,8 +134,22 @@
     "statArchive": "Archive",
     "statArchiveDetail": "Timeline, search, inspector, compare",
     "statJournal": "Session log",
+    "statLiveDetailFrom": " overlay panels from ",
+    "statJournalDetailBefore": "On-disk ",
+    "statJournalDetailAfter": " files + line viewer",
     "statVault": "Vault",
     "statVaultDetail": "Export settings, data, logs",
+    "codeExtensions": {
+      "log": ".log",
+      "logGz": ".log.gz"
+    },
+    "glossaryTermText": {
+      "sse": "SSE",
+      "mmf": "shared memory",
+      "tauri": "Tauri",
+      "nsis": "NSIS",
+      "loopback": "localhost only"
+    },
     "tabsAria": "Product sections",
     "tabs": {
       "features": "Features",
@@ -142,25 +166,30 @@
       "tailFollow": "Tail follow",
       "logFiles": "Log files",
       "logHint": "Download file · sort · virtualized scroll in app",
-      "recording": "Recording",
-      "ldpIngest": "LDP ingest",
+      "recording": "Archive on",
+      "ldpIngest": "Plugin ready",
+      "archiveOn": "Archive on",
+      "journalOn": "Journal on",
+      "pluginReady": "Plugin ready",
+      "workerReady": "Worker ready",
       "archiveTimeline": "Archive timeline · snapshots",
       "speed": "Speed",
       "fuel": "Fuel",
       "lanPort": "LAN · port 8080",
-      "telemetryLive": "Telemetry live",
-      "archiveRecording": "Archive recording",
-      "journalIdle": "Journal idle",
+      "telemetryLive": "Game linked",
+      "archiveRecording": "Archive on",
+      "journalIdle": "Journal on",
       "liveDriving": "Live driving",
-      "liveFromGame": "Live from game",
+      "liveFromGame": "On job",
+      "onJob": "On job",
       "gear": "Gear",
       "odometer": "Odometer",
-      "wizardTitle": "Link your game",
-      "wizardStepDetect": "Detect ETS2 / ATS install",
-      "wizardStepPlugin": "Enable SDK telemetry plugin",
-      "wizardStepTest": "Test live speed & job fields",
-      "wizardWaiting": "Waiting for first telemetry frame…",
-      "serverRunning": "Server running",
+      "wizardTitle": "Game setup",
+      "wizardStepDetect": "Hook up game telemetry",
+      "wizardStepPlugin": "Install your telemetry plugin",
+      "wizardStepTest": "Verify connection",
+      "wizardWaiting": "Waiting for telemetry",
+      "serverRunning": "Worker ready",
       "gameLinked": "Game linked",
       "httpServer": "HTTP server",
       "bindAddress": "Bind address",
@@ -168,7 +197,19 @@
       "overlayBaseUrl": "Overlay base URL",
       "gameLink": "Game link",
       "gameLinkStatusBeforePing": "ETS2 · SDK plugin active · last ping",
-      "browserSources": "Browser sources"
+      "browserSources": "Browser sources",
+      "kmBuffered": "412 km buffered",
+      "logFileCount": "2 log files",
+      "sampleLogFile": "overlane-2026-11-09.log",
+      "presetCount": "4 presets",
+      "speedUnit": "km/h",
+      "speedUnitLeadingSpace": " km/h",
+      "routeBadge": "Route",
+      "onTime": "On time",
+      "fuelPercent": "{pct}% fuel",
+      "fuelLabel": "Fuel {pct}%",
+      "gearLabel": "Gear {gear}",
+      "archiveListCaption": "Selected row — inspector shows {route} for this snapshot."
     },
     "dataScale": {
       "title": "Scale and storage (honest)",
@@ -188,10 +229,43 @@
       "archiveFoldSimilar": "Fold similar — collapse matching snapshots in a time window; fines and deliveries never fold",
       "ldpArchitectureLayer": "Hot ledger, cold column files, and search index on one machine — sparse ingest and rollup buckets keep dashboards fast as observation counts climb into the millions."
     },
+    "homeScroll": {
+      "anchorTour": "Product tour",
+      "anchorOutcomes": "Outcomes",
+      "anchorInstall": "Install",
+      "anchorGuides": "Guides",
+      "anchorsAria": "On this page",
+      "outcomesTitle": "What you get on day one",
+      "outcomesLead": "Four outcomes — live driving, memory, streaming, and setup — without hunting menus.",
+      "installTitle": "Install options",
+      "installLead": "Ship a production build or try mock telemetry before you link the game.",
+      "powerUsersTitle": "IT & power users",
+      "powerUsersSummary": "Architecture, local data plane, overlay policy, and trust boundaries for reviewers."
+    },
+    "homeOutcomes": {
+      "liveArchiveTitle": "Live map & archive",
+      "liveArchiveSummary": "Home card from real telemetry and a searchable timeline when recording is on.",
+      "liveArchiveB0": "Speed, fuel, contract, and health strip while you drive.",
+      "liveArchiveB1": "Search the timeline, fold similar rows, and open any snapshot in the inspector.",
+      "overlaysTitle": "Overlays for streams",
+      "overlaysSummary": "Canon preset URLs for OBS and browser sources — same metrics as the console.",
+      "overlaysB0": "Velocity, controls, contract, and the rest of the catalog.",
+      "overlaysB1": "Copy a URL once; point OBS at localhost.",
+      "journalTitle": "Session journal",
+      "journalSummary": "On-disk logs with tail-follow and download — app logging, not cloud notes.",
+      "journalB0Before": "Browse ",
+      "journalB0Between": " and ",
+      "journalB0After": " with virtualized scroll in the app.",
+      "journalB1": "Tail lines with follow mode during long hauls.",
+      "workerTitle": "Install & local worker",
+      "workerSummary": "Tauri shell, NSIS installers, and one telemetry worker on loopback by default.",
+      "workerB0": "Production installer or Demo with mock telemetry — no game required.",
+      "workerB1": "Bind address and port in Settings when you need LAN overlays."
+    },
     "showcase": {
-      "heading": "The console you run beside the game",
-      "lead": "One operator surface in the desktop app and browser: health strip, archive, overlays, and settings — samples rotate below so you can see each area without hunting through tabs.",
-      "galleryLabel": "Tour the product",
+      "heading": "Three steps beside the game",
+      "lead": "Live console, searchable archive, and stream overlays — pick a step below. Nothing auto-advances.",
+      "galleryLabel": "Product tour",
       "note": "Illustrative samples — not a live session. Install Overlane for your own telemetry.",
       "carouselPrevAria": "Previous sample",
       "carouselNextAria": "Next sample",
@@ -199,12 +273,12 @@
       "slideHomeTitle": "Home · Live driving",
       "slideHomeBlurb": "Speed, fuel, gear, odometer, and active contract — the same card you get from real telemetry.",
       "slideArchiveTitle": "Archive timeline",
-      "slideArchiveBlurb": "Scrub snapshots on disk and compare lanes without replaying the entire session.",
+      "slideArchiveBlurb": "Virtualized snapshot rows on disk — search, fold similar, and inspect any moment without replaying the session.",
       "slideJournalBlurbBefore": "Browse ",
       "slideJournalBlurbBetween": " / ",
       "slideJournalBlurbAfter": " files, tail lines with follow mode, and download — app logging, not sticky notes.",
-      "slideOverlaysTitle": "Overlay presets",
-      "slideOverlaysBlurb": "Copy browser-source URLs for Velocity, Controls, Contract, and the rest of the canon catalog.",
+      "slideOverlaysTitle": "Overlays for OBS",
+      "slideOverlaysBlurb": "Copy browser-source URLs for Velocity, Controls, Contract, and stream-ready layouts that match the live console.",
       "slideStreamTitle": "Stream overlays",
       "slideStreamBlurb": "Telemetry glass styling — speed focus, minimal, or route-first on one feed.",
       "slideSettingsTitle": "Settings · Connection",
@@ -231,7 +305,7 @@
       "sidecar": "Sidecar",
       "consoleOverlays": "Console / overlays",
       "obsBrowser": "OBS browser",
-      "localService": "Local service",
+      "localService": "Telemetry worker",
       "console": "Console",
       "you": "You",
       "overlayPanels": "Overlay panels",
@@ -246,10 +320,10 @@
         "lead": "Overlane reads the game, serves a rich operator console, feeds your stream, and records every mile you opt into for dashboards and archive replay — all on your PC.",
         "calloutStrong": "Your data stays local.",
         "calloutRest": " No cloud account is required.",
-        "flowCaption": "Game → local service → you and your stream",
+        "flowCaption": "Game → telemetry worker → you and your stream",
         "flowAria": "End-to-end product flow",
         "flowStreamLabel": "Stream path",
-        "flowStreamRest": " — same service, different surface"
+        "flowStreamRest": " — same worker, different surface"
       },
       "architecture": {
         "title": "Composable local product",
@@ -279,7 +353,7 @@
       "live": {
         "title": "Live telemetry and overlays",
         "leadBefore": "Overlay panels subscribe to",
-        "leadAfter": " from the same local service that powers the console — MMF capture from the game, fan-out to browser sources.",
+        "leadAfter": " from the same user-session telemetry worker that powers the console — MMF capture from the game, fan-out to browser sources.",
         "presetsStrong": "Preset panels",
         "presetsBody": " — canon paths such as speed, fuel, contract; per-panel metric toggles and order.",
         "globalStrong": "Global overlay look",
@@ -296,17 +370,19 @@
       "desktop": {
         "title": "Windows desktop",
         "leadBefore": "",
-        "leadBetween": " packages the local service, analytics library, and official telemetry DLL into ",
+        "leadBetween": " bundles a per-user telemetry worker (not a Windows service), analytics library, and official telemetry DLL into ",
         "leadAfter": " installers.",
         "colInstaller": "Installer",
         "colAudience": "Audience",
         "colBehaviour": "Behaviour",
         "rowProdName": "Overlane",
         "rowProdAudience": "Players & streamers",
-        "rowProdBehaviour": "Live telemetry, full archive, game-link wizard",
+        "rowProdBehaviour": "Live telemetry, console, overlays, archive, and journal — current-user NSIS install",
         "rowDemoName": "Overlane Demo",
         "rowDemoAudience": "Trials",
-        "rowDemoBehaviour": "Sample telemetry and archive without the game"
+        "rowDemoBehaviour": "Mock telemetry + pre-seeded archive — explore console, overlays, and journal without the game",
+        "installCalloutStrong": "User-session only.",
+        "installCalloutBody": " Neither production nor Demo registers a Windows service or SCM entry — the worker starts when you launch the desktop app and stops when you quit."
       },
       "trust": {
         "title": "Trust & privacy",
@@ -314,14 +390,15 @@
         "calloutStrong": "Default bind:",
         "calloutBefore": " ",
         "calloutAfter": ". LAN exposure is opt-in in Settings.",
-        "footer": "Proprietary software. Shipped installers include third-party components under their own licenses."
+        "footer": "Proprietary software. Shipped installers include third-party components under their own licenses.",
+        "noServiceNote": "No elevated admin install is required for normal use — telemetry stays in your Windows user session."
       }
     },
     "architectureLayers": {
       "desktopTitle": "Desktop shell",
-      "desktopText": "Tauri window with custom titlebar, opens the console webview on localhost, manages sidecar lifecycle.",
-      "serviceTitle": "Local service",
-      "serviceText": "Go HTTP server: telemetry ingest, archive API, overlay routes, static console bundles, SSE live feed.",
+      "desktopText": "Tauri window with custom titlebar, opens the console webview on localhost, starts and stops the telemetry worker with the app.",
+      "serviceTitle": "Telemetry worker",
+      "serviceText": "Go HTTP server in your user session: telemetry ingest, archive API, overlay routes, console bundles, and SSE live feed.",
       "consoleTitle": "Console UI",
       "consoleText": "CLAD-shaped React views with custom elements for heavy widgets; one operator surface for archive, journal, overlays.",
       "overlayTitle": "Overlay surfaces",
@@ -359,7 +436,7 @@
       "deliveriesB1": "Event groups and durations when analytics are available",
       "deliveriesB2": "Open detail without leaving the console",
       "overlaysTitle": "Overlays",
-      "overlaysSummary": "OBS browser sources from the same local service.",
+      "overlaysSummary": "OBS browser sources from the same telemetry worker as the console.",
       "overlaysB0": "Preset panels (Velocity, Controls, Contract, …) with live thumbnails",
       "overlaysB1": "Per-panel configure, metric order, and global overlay appearance",
       "overlaysB2Before": "Full-screen builder at ",
@@ -454,9 +531,9 @@
       },
       "tauri": {
         "title": "Tauri",
-        "body": "Native Windows shell hosting the web console and local service lifecycle.",
+        "body": "Native Windows shell hosting the web console and user-session telemetry worker lifecycle.",
         "layman": "The desktop app wrapper around the browser console.",
-        "ol": "Boot splash, health-gated startup, bundled telemetry DLL."
+        "ol": "Boot splash, health-gated startup, bundled telemetry DLL — worker is not a Windows service."
       },
       "loopback": {
         "title": "Loopback bind",
@@ -465,10 +542,10 @@
         "ol": "Default for console and overlay URLs."
       },
       "sidecar": {
-        "title": "Sidecar process",
-        "body": "Companion service for API, live feed, ingest, and archive.",
+        "title": "Telemetry worker",
+        "body": "Companion Go process for API, live feed, ingest, and archive — runs in your user session, not as a Windows service.",
         "layman": "The engine running while the desktop window is open.",
-        "ol": "Started by the desktop app at launch."
+        "ol": "Started by the desktop app at launch; exits when you quit Overlane."
       },
       "spa": {
         "title": "Single-page app (SPA)",
@@ -494,11 +571,11 @@
     "gettingStarted": {
       "title": "Getting started",
       "lead": "Overlane runs on your PC. Nothing is uploaded off your machine by default.",
-      "b0": "Get the latest Windows installer from https://short.army/overlane (Buy now card appears after you scroll).",
-      "b1": "Run the installer and start Overlane from the Start menu.",
+      "b0": "Get the latest production NSIS installer from https://short.army/overlane (hero Download button or sticky Buy now).",
+      "b1": "Run the installer — per-user, not a Windows service — and start Overlane from the Start menu or tray.",
       "b2": "Follow the game-link wizard: pick your ETS2 or ATS folder and install the official telemetry plugin when prompted.",
       "b3": "Open Overlays and copy a panel URL into OBS or a browser beside the game.",
-      "b4": "Optional: enable recording under Settings → Storage for timelines and search."
+      "b4": "Optional: enable recording under Settings → Storage for archive timelines, dashboard rollups, and search."
     },
     "playerGuide": {
       "title": "Player guide",
@@ -507,19 +584,23 @@
       "b1": "Open Home for the Live driving card: speed, fuel, gear, odometer, and active route when you are on a job.",
       "b2": "Use Overlays to copy panel URLs into your streaming app.",
       "b3": "Tray menu: open the console or quit before running an installer upgrade.",
-      "b4": "Overlane Demo includes sample data so you can explore without the game."
+      "b4": "Overlane Demo ships mock telemetry and sample archive data — console, overlays, archive, and journal work with no game."
     },
     "license": {
       "title": "Proprietary notice",
       "p0": "Copyright © Strixun. All rights reserved.",
-      "p1": "Overlane is proprietary software. This public repository contains marketing materials and release binaries only.",
+      "p1": "Overlane is proprietary software. This public site is marketing materials only — Windows installers ship through licensed purchase channels, not this repository.",
       "p2": "You may not copy, modify, or redistribute the software except as permitted by your license agreement or the terms on the release you downloaded.",
       "p3": "Shipped installers include third-party components under their own licenses."
     },
     "downloads": {
       "title": "Windows installers",
-      "p0": "Production Overlane includes live telemetry and the full archive stack.",
-      "p1": "Overlane Demo lets you explore the console with sample telemetry — no game required."
+      "p0": "Windows builds ship as NSIS setup bundles from the purchase link below. Licensed artifacts also publish on the public GitHub release page when a build is promoted.",
+      "p1": "Production Overlane connects to live ETS2/ATS telemetry. Overlane Demo uses a built-in mock feed and pre-seeded archive so you can tour every console surface without installing the game.",
+      "p2": "Demo install targets the current user profile (for example under LocalAppData) and does not touch Windows services or the Service Control Manager.",
+      "b0": "Overlane — live game link, archive, journal, overlays, and operator console.",
+      "b1": "Overlane Demo — mock telemetry worker session for trials and stream layout testing.",
+      "b2": "Quit Overlane from the tray before upgrading either installer."
     }
   }
 }
